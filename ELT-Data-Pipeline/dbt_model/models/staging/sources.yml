@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: ethereum
+    database: envio-dev
+    schema: ELT_DATA
+    tables:
+      - name: blocks
+      - name: transactions
+      - name: traces
+      - name: logs
+      - name: token_metadata

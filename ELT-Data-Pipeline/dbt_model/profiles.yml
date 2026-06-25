@@ -1,0 +1,12 @@
+dbt_model:
+  outputs:
+    dev:
+      dbname: "{{ env_var('DB_NAME', 'envio-dev') }}"
+      host: "{{ env_var('DB_HOST', 'localhost') }}"
+      pass: "{{ env_var('DB_PASSWORD', 'testing') }}"
+      port: "{{ env_var('DB_PORT', '5433') | as_number }}"
+      schema: "{{ env_var('DB_SCHEMA', 'ELT_DATA') }}"
+      threads: 2
+      type: postgres
+      user: "{{ env_var('DB_USER', 'postgres') }}"
+  target: dev

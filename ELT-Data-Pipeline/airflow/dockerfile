@@ -1,0 +1,9 @@
+FROM apache/airflow:3.1.5
+
+USER root
+
+
+USER airflow
+
+# Install project dependencies into the image so they don't download on startup
+RUN pip install --no-cache-dir psycopg2-binary python-dotenv dbt-core dbt-postgres web3 eth-abi
